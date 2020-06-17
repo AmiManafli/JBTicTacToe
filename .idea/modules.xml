@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Swap the columns/Problems-Swap_the_columns.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Swap the columns/Problems-Swap_the_columns.iml" group="Tic-Tac-Toe/Problems-Swap_the_columns" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Swap the columns (1)/Problems-Swap_the_columns__1_.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Swap the columns (1)/Problems-Swap_the_columns__1_.iml" group="Tic-Tac-Toe/Problems-Swap_the_columns__1_" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Swap the columns (1)/Problems-Swap_the_columns__1__main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Swap the columns (1)/Problems-Swap_the_columns__1__main.iml" group="Tic-Tac-Toe/Problems-Swap_the_columns__1_" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Swap the columns (1)/Problems-Swap_the_columns__1__test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Swap the columns (1)/Problems-Swap_the_columns__1__test.iml" group="Tic-Tac-Toe/Problems-Swap_the_columns__1_" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Swap the columns/Problems-Swap_the_columns_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Swap the columns/Problems-Swap_the_columns_main.iml" group="Tic-Tac-Toe/Problems-Swap_the_columns" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Swap the columns/Problems-Swap_the_columns_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Swap the columns/Problems-Swap_the_columns_test.iml" group="Tic-Tac-Toe/Problems-Swap_the_columns" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Tic-Tac-Toe.iml" filepath="$PROJECT_DIR$/.idea/modules/Tic-Tac-Toe.iml" group="Tic-Tac-Toe" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Tic-Tac-Toe/task/Tic-Tac-Toe-task.iml" filepath="$PROJECT_DIR$/.idea/modules/Tic-Tac-Toe/task/Tic-Tac-Toe-task.iml" group="Tic-Tac-Toe/Tic-Tac-Toe-task" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Tic-Tac-Toe/task/Tic-Tac-Toe-task_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Tic-Tac-Toe/task/Tic-Tac-Toe-task_main.iml" group="Tic-Tac-Toe/Tic-Tac-Toe-task" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Tic-Tac-Toe/task/Tic-Tac-Toe-task_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Tic-Tac-Toe/task/Tic-Tac-Toe-task_test.iml" group="Tic-Tac-Toe/Tic-Tac-Toe-task" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util.iml" group="Tic-Tac-Toe/util" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util_main.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util_main.iml" group="Tic-Tac-Toe/util" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util_test.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util_test.iml" group="Tic-Tac-Toe/util" />
+    </modules>
+  </component>
+</project>

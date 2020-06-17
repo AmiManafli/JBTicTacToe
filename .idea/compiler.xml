@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="Problems-Swap_the_columns__1__main" target="11" />
+      <module name="Problems-Swap_the_columns__1__test" target="11" />
+      <module name="Problems-Swap_the_columns_main" target="11" />
+      <module name="Problems-Swap_the_columns_test" target="11" />
+      <module name="Tic-Tac-Toe-task_main" target="11" />
+      <module name="Tic-Tac-Toe-task_test" target="11" />
+      <module name="util_main" target="11" />
+      <module name="util_test" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
