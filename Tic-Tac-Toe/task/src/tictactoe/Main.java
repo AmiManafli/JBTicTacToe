@@ -14,42 +14,55 @@ enum FieldState {
 public class Main {
     static char X = 'X';
     static char O = 'O';
-    static char EMPTY = '_';
-    private static FieldState state = FieldState.ANALYZING;
+    static char EMPTY = ' ';
+    private static FieldState state = FieldState.GAME_NOT_FINISHED;
     static Scanner scanner = new Scanner(System.in);
     static boolean isInputValid = false;
     static Pattern twoIntegers = Pattern.compile("(\\d+) (\\d+)");
+    static char[][] field = new char[3][3];
+    static Pair<Integer, Integer> targetCoord = null;
+    static boolean turnX = true;
 
     public static void main(String[] args) {
-        char[][] field = new char[3][3];
-        System.out.println("Enter cells:");
-        String input = scanner.nextLine();
-        System.out.println(input);
+        fieldInit();
+        printFieldState();
+        while(state == FieldState.GAME_NOT_FINISHED) {
+            runTicTacToe();
+        }
+    }
+
+    private static void fieldInit() {
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field[0].length; j++) {
-                field[i][j] = input.charAt(i*3 + j);
+                field[i][j] = ' ';
             }
         }
-        printFieldState(field);
-        Pair<Integer, Integer> targetCoord = null;
+    }
+
+    private static void runTicTacToe() {
         while(!isInputValid) {
             try {
-            targetCoord = getMove(field);
+                targetCoord = getMove(field);
             } catch (TicTacToeException e) {
                 System.out.println(e.getMessage());
             }
         }
-
-        updateField(field, targetCoord);
-        printFieldState(field);
+        isInputValid = false;
+        updateField(targetCoord);
+        while(analyzeField());
+        printFieldState();
     }
 
-    private static void updateField(char[][] field, Pair<Integer, Integer> targetCoord) {
+    private static void updateField(Pair<Integer, Integer> targetCoord) {
         int row = targetCoord.getKey();
         int col = targetCoord.getValue();
-        field[row][col] = X;
+        if (turnX) {
+            field[row][col] = X;
+        } else {
+            field[row][col] = O;
+        }
+        turnX = !turnX;
     }
-
 
     private static Pair<Integer, Integer> getMove(char[][] field) throws TicTacToeException {
         System.out.println("Enter the coordinates:");
@@ -74,7 +87,7 @@ public class Main {
         }
     }
 
-    private static void printFieldState(char[][] field) {
+    private static void printFieldState() {
         showField(field);
         switch (state) {
             case X_WINS:
@@ -89,13 +102,13 @@ public class Main {
             case IMPOSSIBLE:
                 System.out.println("Impossible");
                 break;
-            case GAME_NOT_FINISHED:
-                System.out.println("Game not finished");
-                break;
+//            case GAME_NOT_FINISHED:
+//                System.out.println("Game not finished");
+//                break;
         }
     }
 
-    public static boolean analyzeField(char[][] field) {
+    public static boolean analyzeField() {
         return isPossible(field) &&
                 checkWinHorizontal(field) &&
                 checkWinVertical(field) &&
