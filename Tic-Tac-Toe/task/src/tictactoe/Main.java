@@ -1,6 +1,9 @@
 package tictactoe;
-import java.lang.reflect.Field;
+import javafx.util.Pair;
+
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static java.lang.Math.abs;
 
@@ -13,20 +16,62 @@ public class Main {
     static char O = 'O';
     static char EMPTY = '_';
     private static FieldState state = FieldState.ANALYZING;
+    static Scanner scanner = new Scanner(System.in);
+    static boolean isInputValid = false;
+    static Pattern twoIntegers = Pattern.compile("(\\d+) (\\d+)");
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         char[][] field = new char[3][3];
-        String input = scanner.next();
+        System.out.println("Enter cells:");
+        String input = scanner.nextLine();
+        System.out.println(input);
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field[0].length; j++) {
                 field[i][j] = input.charAt(i*3 + j);
             }
         }
-
-        while (analyzeField(field));
-
         printFieldState(field);
+        Pair<Integer, Integer> targetCoord = null;
+        while(!isInputValid) {
+            try {
+            targetCoord = getMove(field);
+            } catch (TicTacToeException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        updateField(field, targetCoord);
+        printFieldState(field);
+    }
+
+    private static void updateField(char[][] field, Pair<Integer, Integer> targetCoord) {
+        int row = targetCoord.getKey();
+        int col = targetCoord.getValue();
+        field[row][col] = X;
+    }
+
+
+    private static Pair<Integer, Integer> getMove(char[][] field) throws TicTacToeException {
+        System.out.println("Enter the coordinates:");
+        String input = scanner.nextLine();
+        Matcher m = twoIntegers.matcher(input);
+
+        if(m.matches()) {
+            int targetCol = Integer.parseInt(m.group(1));
+            int targetRow = Integer.parseInt(m.group(2));
+            if(targetCol > 3 || targetCol < 1 || targetRow > 3 || targetRow < 1) {
+                throw new TicTacToeException("Coordinates should be from 1 to 3!");
+            }
+            int row = Math.abs(targetRow - 3);
+            int col = Math.abs(targetCol - 1);
+            if (field[row][col] != EMPTY) {
+                throw new TicTacToeException("This cell is occupied! Choose another one!");
+            }
+            isInputValid = true;
+            return new Pair<>(row, col);
+        } else {
+            throw new TicTacToeException("You should enter numbers!");
+        }
     }
 
     private static void printFieldState(char[][] field) {
