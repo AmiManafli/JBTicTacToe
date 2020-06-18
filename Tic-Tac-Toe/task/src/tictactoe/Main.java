@@ -1,4 +1,5 @@
 package tictactoe;
+
 import javafx.util.Pair;
 
 import java.util.*;
@@ -26,7 +27,7 @@ public class Main {
     public static void main(String[] args) {
         fieldInit();
         printFieldState();
-        while(state == FieldState.GAME_NOT_FINISHED) {
+        while (state == FieldState.GAME_NOT_FINISHED) {
             runTicTacToe();
         }
     }
@@ -40,7 +41,7 @@ public class Main {
     }
 
     private static void runTicTacToe() {
-        while(!isInputValid) {
+        while (!isInputValid) {
             try {
                 targetCoord = getMove(field);
             } catch (TicTacToeException e) {
@@ -49,7 +50,7 @@ public class Main {
         }
         isInputValid = false;
         updateField(targetCoord);
-        while(analyzeField());
+        while (analyzeField()) ;
         printFieldState();
     }
 
@@ -69,10 +70,10 @@ public class Main {
         String input = scanner.nextLine();
         Matcher m = twoIntegers.matcher(input);
 
-        if(m.matches()) {
+        if (m.matches()) {
             int targetCol = Integer.parseInt(m.group(1));
             int targetRow = Integer.parseInt(m.group(2));
-            if(targetCol > 3 || targetCol < 1 || targetRow > 3 || targetRow < 1) {
+            if (targetCol > 3 || targetCol < 1 || targetRow > 3 || targetRow < 1) {
                 throw new TicTacToeException("Coordinates should be from 1 to 3!");
             }
             int row = Math.abs(targetRow - 3);
@@ -239,7 +240,7 @@ public class Main {
             }
 
             countO = 0;
-            countX  = 0;
+            countX = 0;
         }
 
         if (threeInARowO && threeInARowX) {
