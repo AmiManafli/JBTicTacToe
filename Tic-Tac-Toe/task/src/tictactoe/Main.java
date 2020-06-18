@@ -1,11 +1,9 @@
 package tictactoe;
 
 import javafx.util.Pair;
-
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import static java.lang.Math.abs;
 
 enum FieldState {
@@ -103,9 +101,6 @@ public class Main {
             case IMPOSSIBLE:
                 System.out.println("Impossible");
                 break;
-//            case GAME_NOT_FINISHED:
-//                System.out.println("Game not finished");
-//                break;
         }
     }
 
@@ -278,14 +273,13 @@ public class Main {
 
     public static void showField(char[][] field) {
         System.out.println("---------");
-        for (int i = 0; i < field.length; i++) {
+        for (char[] chars : field) {
             System.out.print("| ");
             for (int j = 0; j < field[0].length; j++) {
-                System.out.print(field[i][j] + " ");
+                System.out.print(chars[j] + " ");
             }
             System.out.println(" |");
         }
         System.out.println("---------");
     }
-
 }
